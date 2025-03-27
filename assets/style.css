@@ -1,0 +1,21 @@
+nav ul {
+    list-style: none; /* Entfernt die Aufzählungszeichen */
+    padding: 0; /* Entfernt den Innenabstand des ul-Elements */
+    margin: 0; /* Entfernt den Außenabstand des ul-Elements */
+    display: flex; /* Aktiviert Flexbox für die untergeordneten Elemente (li) */
+    justify-content: flex-start; /* Richtet die Elemente am Anfang der Zeile aus (optional) */
+  }
+  
+  nav ul li {
+    margin-right: 20px; /* Fügt einen Abstand zwischen den einzelnen Links hinzu (optional) */
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0; /* Entfernt den rechten Abstand des letzten Links (optional) */
+  }
+  
+  nav ul li a {
+    text-decoration: none; /* Entfernt die Unterstreichung der Links (optional) */
+    color: black; /* Setzt die Textfarbe der Links (optional) */
+    /* Füge hier weitere Styling-Optionen für die Links hinzu, z.B. padding, border, etc. */
+  }
