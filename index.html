@@ -56,14 +56,12 @@
             get/set: Steuern den Zugriff auf Eigenschaften.
             static: Methoden/Eigenschaften, die zur Klasse selbst gehören.
 */</code></pre>
-        <h3>Codebeispiele</h3><button id="beispiel1">Ein Beispielskript ausführen</button>
-        <pre><code class="language-js">const container = document.querySelector("#container");const text = document.querySelector("#text");const totalTime = 7500;const breatheTime = (totalTime / 5) * 2;const holdTime = totalTime / 5;breathAnimation();function breathAnimation() {text.innerHTML = "Einatmen!";container.className = "container grow"; // Growanimation in csssetTimeout(() => {text.innerHTML = "Halten";setTimeout(() => {text.innerHTML = "Ausatmen!";container.className = "container shrink"; // shrinkanimation in css}, holdTime); // nach dem Halten ausatmen}, breatheTime); // Nach einem Atemzyklus halten}setInterval(breathAnimation, totalTime);</code></pre>
         <h3>Weiterführende Links:</h3>
         <ul>
-            <li>Mdn: <a href="https://developer.mozilla.org/en-US/">Beispiel</a></li>
+            <li><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Classes">Mozilla Erklärung zu Klassen in JavaScript</a></li>
         </ul>
     </main>
-    <footer>von {name}, {name}, ... - WT2</footer>
+    <footer>von Pascal Speicher & Maximilian Malimonenko - WT2</footer>
     <script src="/assets/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
