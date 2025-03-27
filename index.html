@@ -25,15 +25,37 @@
         <h2>Kurzanleitung für Javascript Klassen und Klassen-Syntax</h2>
     </header>
     <main>
-        <h3>Wozu braucht es diese WEB-API</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio mauris, <kbd>sollicitudin</kbd> et
-            tellus quis, tincidunt tincidunt urna. <mark>Vivamus facilisis mi</mark> arcu, quis tempor sapien porta
-            laoreet. Nulla nec semper arcu. Proin vehicula at urna eu tristique. Fusce dignissim ante libero, ut
-            vulputate ex congue ac. Proin malesuada, mauris a ultrices congue, urna est lacinia felis, quis ornare diam
-            mi et mauris. Suspendisse ornare finibus diam nec egestas. Nunc tristique ante at erat varius, eu pulvinar
-            dui sollicitudin. In at aliquam nulla, ut tristique arcu. Nam non nibh condimentum, pulvinar sapien ac,
-            gravida est. Morbi dapibus tristique turpis, et auctor odio egestas at. Vivamus placerat mollis magna, et
-            fringilla ligula semper a. In eleifend sagittis ante, id volutpat nisi rutrum a.</p>
+        <h3>Was sind Javascript Klassen?</h3>
+        <p>
+            - Klassen sind eine relativ neue Funktion in Javascript, diese wurden 2015 eingeführt
+            <br><br>
+            - Sie sind "synaktischer Zucker" über der prototypenbasierten Vererbung, das bedeutet, dass sie im Grunde eine vereinfachte und intuitivere Schreibweise für das bereits existierende prototypenbasierte Objektmodell von Javascript darstellen.
+            <br><br>
+            - Sie ändern die Funktionsweise nicht, machen die objektorientierte Programmierung aber zugänglicher und ähneln der Syntax anderer objektorientierter Sprachen.
+        </p>
+        <h3>
+            Warum sollte man Javascript Klassen nutzen?
+        </h3>
+        <p>
+            - <strong>Bessere Stukturierung:</strong><br>
+            Klassen helfen, verwandten Code (Daten und Funktionen) in logischen Einheiten zu organisieren, was die Lesbarkeit und Wartbarkeit verbessert
+            <br>
+            - <strong>Wiederverwendbarkeit:</strong><br>
+            Einmal definierte Klassen können beliebig oft verwendet werden, um neue Objekte mit ähnlichen Eigenschaften und Verhaltensweisen zu erstellen
+            <br>
+            - <strong>Einfachere Vererbung:</strong><br>
+            Die extends-Syntax macht die Vererbung von Eigenschaften und Methoden zwischen Klassen deutlich einfacher und verständlicher als die direkte Manipulation von Prototypen
+        </p>
+        <h3>Schlüsselwörter</h3>
+        <pre><code class="language-js">/*
+            class: Definiert eine neue Klasse.
+            constructor(): Spezielle Methode zur Objekt-Initialisierung.
+            extends: Ermöglicht Vererbung von einer anderen Klasse.
+            super(): Ruft den Konstruktor der Elternklasse auf.
+            Methoden: Funktionen innerhalb der Klasse, definieren das Verhalten.
+            get/set: Steuern den Zugriff auf Eigenschaften.
+            static: Methoden/Eigenschaften, die zur Klasse selbst gehören.
+*/</code></pre>
         <h3>Codebeispiele</h3><button id="beispiel1">Ein Beispielskript ausführen</button>
         <pre><code class="language-js">const container = document.querySelector("#container");const text = document.querySelector("#text");const totalTime = 7500;const breatheTime = (totalTime / 5) * 2;const holdTime = totalTime / 5;breathAnimation();function breathAnimation() {text.innerHTML = "Einatmen!";container.className = "container grow"; // Growanimation in csssetTimeout(() => {text.innerHTML = "Halten";setTimeout(() => {text.innerHTML = "Ausatmen!";container.className = "container shrink"; // shrinkanimation in css}, holdTime); // nach dem Halten ausatmen}, breatheTime); // Nach einem Atemzyklus halten}setInterval(breathAnimation, totalTime);</code></pre>
         <h3>Weiterführende Links:</h3>
