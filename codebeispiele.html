@@ -15,10 +15,10 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#">Startseite</a></li>
-            <li><a href="#">Über uns</a></li>
-            <li><a href="#">Dienste</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="index.html">Grundlegendes</a></li>
+            <li><a href="codebeispiele.html">Codebeispiele</a></li>
+            <li><a href="Mini-Anwendung.html">Mini-Anwendung</a></li>
+            <li><a href="Usecases.html">Usecases</a></li>
         </ul>
     </nav>
     <header>
@@ -29,17 +29,31 @@
         <h3>Grundlegende Klasse und Instanziierung</h3>
         <button id="beispiel_grundlegend">Grundlegende Klasse und Instanziierung ausführen</button>
         <pre><code class=language-js>
+// Grundlegendes Beispiel
+
+const beispiel_grundlegend = document.getElementById("beispiel_grundlegend");
+
+// Erstelle die Tier Klasse
 class Tier {
-    constructor(name) {
-      this.name = name;
-    }
-  
-    sprich() {
-      alert(this.name + " macht ein Geräusch."); // Corrected this line
-    }
+  // Constructor: Wird aufgerufen wenn ein neues Hund Objekt erstellt wird
+  constructor(name) {
+    // Erstellt eine Name Eigenschaft für die Klasse Tier, die durch den Konstruktor angegeben muss, wenn ein Hund initialisiert wird
+    this.name = name; 
   }
-  
-  const hund = new Tier("Bello");
+
+  //Erstellt eine Funktion, die zur Tier Klasse gehört
+  sprich() {
+    alert(this.name + " macht ein Geräusch."); 
+  }
+}
+
+// Erstelle ein neues Tier Objekt mit dem Namen Hund
+const hund = new Tier("Bello");
+
+beispiel_grundlegend.addEventListener("click", function() {
+  // Rufe die Sprich Funktion auf
+  hund.sprich();
+});
         </code></pre>
         <h3>Vererbung</h3>
         <button id="beispiel_vererbung">Vererbung ausführen</button>
