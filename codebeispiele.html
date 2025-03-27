@@ -25,13 +25,49 @@
         <h2>Kurzanleitung für Javascript Klassen und Klassen-Syntax</h2>
     </header>
     <main>
-        <h3>Codebeispiele</h3>
-        <button id="beispiel1">Ein Beispielskript ausführen</button>
-        <pre><code class="language-js">const container = document.querySelector("#container");const text = document.querySelector("#text");const totalTime = 7500;const breatheTime = (totalTime / 5) * 2;const holdTime = totalTime / 5;breathAnimation();function breathAnimation() {text.innerHTML = "Einatmen!";container.className = "container grow"; // Growanimation in csssetTimeout(() => {text.innerHTML = "Halten";setTimeout(() => {text.innerHTML = "Ausatmen!";container.className = "container shrink"; // shrinkanimation in css}, holdTime); // nach dem Halten ausatmen}, breatheTime); // Nach einem Atemzyklus halten}setInterval(breathAnimation, totalTime);</code></pre>
-        <h3>Weiterführende Links:</h3>
-        <ul>
-            <li>Mdn: <a href="https://developer.mozilla.org/en-US/">Beispiel</a></li>
-        </ul>
+        <h2>Codebeispiele</h2>
+        <h3>Grundlegende Klasse und Instanziierung</h3>
+        <button id="beispiel_grundlegend">Grundlegende Klasse und Instanziierung ausführen</button>
+        <pre><code class=language-js>
+class Tier {
+    constructor(name) {
+      this.name = name;
+    }
+  
+    sprich() {
+      alert(this.name + " macht ein Geräusch."); // Corrected this line
+    }
+  }
+  
+  const hund = new Tier("Bello");
+        </code></pre>
+        <h3>Vererbung</h3>
+        <button id="beispiel_vererbung">Vererbung ausführen</button>
+        <pre><code class=language-js>
+const beispiel_vererbung = document.getElementById("beispiel_vererbung");
+
+class Hund extends Tier {
+    constructor(name, rasse) {
+      super(name); // Ruft den Konstruktor von Tier auf
+      this.rasse = rasse;
+    }
+  
+    sprich() {
+      alert("Wuff!");
+    }
+  
+    zeigeRasse() {
+      console.log(`Dieser Hund ist ein ${this.rasse}.`);
+    }
+  }
+  
+  const meinHund = new Hund("Blake", "Golden Retriever");
+
+  beispiel_vererbung.addEventListener("click", function() {
+    meinHund.sprich();
+    meinHund.zeigeRasse();
+  });
+        </code></pre>
     </main>
     <footer>von {name}, {name}, ... - WT2</footer>
     <script src="/assets/highlight.min.js"></script>
