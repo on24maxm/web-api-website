@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/simple.css" />
+    <link rel="stylesheet" href="/assets/hljs-default.css" />
+    <title>Document</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header><h2>Kurzanleitung für {WEB-API-NAME}</h2></header>
+    <main>
+      <h3>Wozu braucht es diese WEB-API</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam odio
+        mauris, <kbd>sollicitudin</kbd> et tellus quis, tincidunt tincidunt
+        urna. <mark>Vivamus facilisis mi</mark> arcu, quis tempor sapien porta
+        laoreet. Nulla nec semper arcu. Proin vehicula at urna eu tristique.
+        Fusce dignissim ante libero, ut vulputate ex congue ac. Proin malesuada,
+        mauris a ultrices congue, urna est lacinia felis, quis ornare diam mi et
+        mauris. Suspendisse ornare finibus diam nec egestas. Nunc tristique ante
+        at erat varius, eu pulvinar dui sollicitudin. In at aliquam nulla, ut
+        tristique arcu. Nam non nibh condimentum, pulvinar sapien ac, gravida
+        est. Morbi dapibus tristique turpis, et auctor odio egestas at. Vivamus
+        placerat mollis magna, et fringilla ligula semper a. In eleifend
+        sagittis ante, id volutpat nisi rutrum a.
+      </p>
+      <h3>Codebeispiele</h3>
+      <button id="beispiel1">Ein Beispielskript ausführen</button>
+      <pre><code class="language-js"> 
+    const container = document.querySelector("#container");
+    const text = document.querySelector("#text");
+    
+    const totalTime = 7500;
+    const breatheTime = (totalTime / 5) * 2;
+    const holdTime = totalTime / 5;
+    
+    breathAnimation();
+    
+    function breathAnimation() {
+        text.innerHTML = "Einatmen!";
+        container.className = "container grow"; // Growanimation in css
+    
+        setTimeout(() => {
+        text.innerHTML = "Halten";
+    
+        setTimeout(() => {
+            text.innerHTML = "Ausatmen!";
+            container.className = "container shrink"; // shrinkanimation in css
+        }, holdTime); // nach dem Halten ausatmen
+        }, breatheTime); // Nach einem Atemzyklus halten
+    }
+    
+    setInterval(breathAnimation, totalTime);
+      </code></pre>
+      <h3>Weiterführende Links:</h3>
+      <ul>
+        <li>
+          Mdn: <a href="https://developer.mozilla.org/en-US/">Beispiel</a>
+        </li>
+      </ul>
+    </main>
+    <footer>von {name}, {name}, ... - WT2</footer>
+    <!--Neccesary for code highlighting below - just dont touch it-->
+    <script src="/assets/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
