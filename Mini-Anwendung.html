@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Präsentation: JavaScript Klassen – Mini-Anwendung Zähler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px auto;
+      max-width: 800px;
+      color: #333;
+    }
+
+    header, section, footer {
+      margin-bottom: 20px;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 3px;
+      overflow-x: auto;
+    }
+    footer {
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    section {
+        margin-bottom: 30px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    #zaehler-container {
+        text-align: center;
+        margin-top: 30px;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    #anzeige {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    #zaehler-container button {
+        padding: 10px 20px;
+        margin: 0 5px;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JavaScript Klassen: Mini-Anwendung "Einfacher Zähler"</h1>
+    <p>Diese Präsentation zeigt, wie Klassen in JavaScript verwendet werden, um eine Mini-Anwendung zu erstellen. Im Fokus steht der <strong>Zähler</strong>, der durch Kapselung von Daten und Funktionalität das grundlegende Prinzip der objektorientierten Programmierung veranschaulicht.</p>
+  </header>
+  
+  <section>
+    <h2>1. Aufbau der Mini-Anwendung "Einfacher Zähler"</h2>
+    <p>
+      Die Mini-Anwendung besteht aus:
+    </p>
+    <ul>
+      <li><strong>Klasse <code>Zaehler</code></strong>: Modelliert das Konzept eines Zählers.</li>
+      <li><strong>Konstruktor (<code>constructor</code>)</strong>: Initialisiert den Zählerwert mit einem optionalen Startwert (Standard: 0).</li>
+      <li><strong>Methoden</strong>:
+        <ul>
+          <li><code>hochzaehlen()</code> – Erhöht den Zählerwert.</li>
+          <li><code>runterzaehlen()</code> – Verringert den Zählerwert, aber nicht unter 0.</li>
+          <li><code>anzeigen()</code> – Gibt den aktuellen Zählerwert in der Konsole aus.</li>
+          <li><code>reset()</code> – Setzt den Zähler auf den Startwert zurück.</li>
+          <li><code>getWert()</code> – Getter-Methode zur sicheren Abfrage des aktuellen Werts.</li>
+        </ul>
+      </li>
+      <li><strong>Instanziierung</strong>: <code>const meinZaehler = new Zaehler();</code></li>
+    </ul>
+  </section>
+  
+  <section>
+    <h2>2. Codebeispiel</h2>
+    <p>Das folgende Codebeispiel zeigt, wie die Klasse implementiert und verwendet wird:</p>
+    <pre>
+class Zaehler {
+  constructor(startwert = 0) {
+    this.wert = startwert;
+  }
+
+  hochzaehlen() {
+    this.wert++;
+  }
+
+  runterzaehlen() {
+    if (this.wert > 0) this.wert--;
+  }
+
+  anzeigen() {
+    console.log('Aktueller Zählerwert:', this.wert);
+  }
+
+  reset() {
+    this.wert = 0;
+  }
+
+  getWert() {
+    return this.wert;
+  }
+}
+
+// Instanz der Klasse erstellen
+const meinZaehler = new Zaehler();
+
+// Methoden aufrufen
+meinZaehler.hochzaehlen();
+meinZaehler.anzeigen();  // Ausgabe: Aktueller Zählerwert: 1
+
+meinZaehler.runterzaehlen();
+meinZaehler.anzeigen();  // Ausgabe: Aktueller Zählerwert: 0
+
+meinZaehler.reset();
+meinZaehler.anzeigen();  // Ausgabe: Aktueller Zählerwert: 0
+    </pre>
+  </section>
+
+  <section>
+    <h2>3. Wartbarkeit und Erweiterbarkeit</h2>
+    <p>Wartbarkeit und Erweiterbarkeit: Durch den modularen Aufbau der Klasse Zaehler können später leicht neue Methoden hinzugefügt werden, ohne dass der Code komplett neu strukturiert werden muss.</p>
+  </section>
+  
+  <section>
+    <h2>4. Erklärung der Kernkonzepte</h2>
+    <p>
+      <strong>Kapselung:</strong> Die Klasse <code>Zaehler</code> fasst alle relevanten Daten und Operationen zusammen.
+    </p>
+    <p>
+      <strong>Getter-Methode:</strong> <code>getWert()</code> sorgt für eine sichere Abfrage des aktuellen Wertes.
+    </p>
+    <p>
+      <strong>Fehlermanagement:</strong> <code>runterzaehlen()</code> verhindert einen negativen Wert.
+    </p>
+    <p>
+      <strong>Modularität:</strong> Die Klasse kann einfach in anderen Programmen wiederverwendet werden.
+    </p>
+  </section>
+  <div id="zaehler-container">
+    <p id="anzeige">0</p>
+    <button onclick="meinZaehler.hochzaehlen(); updateAnzeige()">+</button>
+    <button onclick="meinZaehler.runterzaehlen(); updateAnzeige()">-</button>
+    <button onclick="meinZaehler.reset(); updateAnzeige()">Reset</button>
+  </div>
+  
+  <footer>
+    <p>Präsentation erstellt von [Dein Name] – Datum: <!-- Datum hier einfügen --></p>
+  </footer>
+  <script>
+    class Zaehler {
+      constructor(startwert = 0) {
+        this.wert = startwert;
+      }
+
+      hochzaehlen() {
+        this.wert++;
+      }
+
+      runterzaehlen() {
+        if (this.wert > 0) this.wert--;
+      }
+
+      anzeigen() {
+        console.log('Aktueller Zählerwert:', this.wert);
+      }
+
+      reset() {
+        this.wert = 0;
+      }
+
+      getWert() {
+        return this.wert;
+      }
+    }
+
+    const meinZaehler = new Zaehler();
+
+    function updateAnzeige() {
+      document.getElementById('anzeige').innerText = meinZaehler.getWert();
+    }
+  </script>
+</body>
+</html>
