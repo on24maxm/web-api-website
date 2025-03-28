@@ -14,15 +14,14 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#">Startseite</a></li>
-            <li><a href="#">Über uns</a></li>
-            <li><a href="#">Dienste</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="index.html">Grundlegendes</a></li>
+            <li><a href="codebeispiele.html">Codebeispiele</a></li>
+            <li><a href="Mini-Anwendung.html">Mini-Anwendung</a></li>
+            <li><a href="Usecases.html">Usecases</a></li>
         </ul>
     </nav>
     <header>
-        <h2>JavaScript Klassen: Mini-Anwendung "Einfacher Zähler"</h2>
-        <p>Diese Präsentation zeigt, wie Klassen in JavaScript verwendet werden, um eine Mini-Anwendung zu erstellen. Im Fokus steht der <strong>Zähler</strong>, der durch Kapselung von Daten und Funktionalität das grundlegende Prinzip der objektorientierten Programmierung veranschaulicht.</p>
+        <h2>Kurzanleitung für Javascript Klassen und Klassen-Syntax</h2>
     </header>
     <main>
         <section>
@@ -119,7 +118,12 @@ meinZaehler.anzeigen();  // Ausgabe: Aktueller Zählerwert: 0
             </p>
         </section>
     </main>
-    <footer>von {name}, {name}, ... - WT2</footer>
+    <h3>Weiterführende Links:</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Classes">Mozilla Erklärung zu Klassen in JavaScript</a></li>
+        </ul>
+    </main>
+    <footer>von Pascal Speicher & Maximilian Malimonenko - WT2</footer>
     <script>
         class Zaehler {
             constructor(startwert = 0) {
